@@ -1,0 +1,110 @@
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glosarios de Conectores - Proyecto de Inglés</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .table-container {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            background: white;
+            margin-bottom: 2rem;
+        }
+        tr:nth-child(even) {
+            background-color: #f1f5f9;
+        }
+        .glossary-title {
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-slate-800 mb-2">English Connectors Glossary</h1>
+            <p class="text-slate-600 italic">"Elevando el nivel de redacción y coherencia en inglés"</p>
+            <div class="h-1 w-20 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+        </header>
+
+        <!-- Glosario 1 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-700 mb-6 glossary-title">Glosario 1: Contraste y Adición</h2>
+            <div class="table-container overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-blue-600 text-white">
+                        <tr>
+                            <th class="p-4 uppercase text-sm font-semibold">Palabra</th>
+                            <th class="p-4 uppercase text-sm font-semibold">Fonética (IPA)</th>
+                            <th class="p-4 uppercase text-sm font-semibold">Traducción</th>
+                            <th class="p-4 uppercase text-sm font-semibold">Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr><td class="p-4 font-bold text-blue-700">Although</td><td class="p-4">/ɔːlˈðoʊ/</td><td class="p-4 italic">Aunque</td><td class="p-4"><strong>Although</strong> it is cold, I am happy.</td></tr>
+                        <tr><td class="p-4 font-bold text-blue-700">However</td><td class="p-4">/haʊˈev.ər/</td><td class="p-4 italic">Sin embargo</td><td class="p-4">I like pizza. <strong>However</strong>, I am full.</td></tr>
+                        <tr><td class="p-4 font-bold text-blue-700">Furthermore</td><td class="p-4">/ˌfɜːr.ðəˈmɔːr/</td><td class="p-4 italic">Además / Es más</td><td class="p-4">It is fast. <strong>Furthermore</strong>, it is cheap.</td></tr>
+                        <tr><td class="p-4 font-bold text-blue-700">Instead</td><td class="p-4">/ɪnˈsted/</td><td class="p-4 italic">En su lugar</td><td class="p-4">Don't run. <strong>Instead</strong>, walk slowly.</td></tr>
+                        <tr><td class="p-4 font-bold text-blue-700">Otherwise</td><td class="p-4">/ˈʌð.ə.waɪz/</td><td class="p-4 italic">De lo contrario</td><td class="p-4">Eat now; <strong>otherwise</strong>, you'll be hungry.</td></tr>
+                        <tr><td class="p-4 font-bold text-blue-700">Despite</td><td class="p-4">/dɪˈspaɪt/</td><td class="p-4 italic">A pesar de</td><td class="p-4">I ran <strong>despite</strong> the rain.</td></tr>
+                        <tr><td class="p-4 font-bold text-blue-700">Moreover</td><td class="p-4">/mɔːrˈoʊ.vər/</td><td class="p-4 italic">Por otra parte</td><td class="p-4">She is smart. <strong>Moreover</strong>, she is kind.</td></tr>
+                        <tr><td class="p-4 font-bold text-blue-700">Yet</td><td class="p-4">/jet/</td><td class="p-4 italic">Aun así</td><td class="p-4">It is small, <strong>yet</strong> very strong.</td></tr>
+                        <tr><td class="p-4 font-bold text-blue-700">Nonetheless</td><td class="p-4">/ˌnʌn.ðəˈles/</td><td class="p-4 italic">No obstante</td><td class="p-4">It was hard; <strong>nonetheless</strong>, I finished.</td></tr>
+                        <tr><td class="p-4 font-bold text-blue-700">In addition</td><td class="p-4">/ɪn əˈdɪʃ.ən/</td><td class="p-4 italic">Adicionalmente</td><td class="p-4"><strong>In addition</strong> to milk, I need bread.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Glosario 2 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-700 mb-6 glossary-title">Glosario 2: Causa, Propósito y Detalle</h2>
+            <div class="table-container overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-indigo-600 text-white">
+                        <tr>
+                            <th class="p-4 uppercase text-sm font-semibold">Palabra</th>
+                            <th class="p-4 uppercase text-sm font-semibold">Fonética (IPA)</th>
+                            <th class="p-4 uppercase text-sm font-semibold">Traducción</th>
+                            <th class="p-4 uppercase text-sm font-semibold">Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr><td class="p-4 font-bold text-indigo-700">Therefore</td><td class="p-4">/ˈðer.fɔːr/</td><td class="p-4 italic">Por lo tanto</td><td class="p-4">I studied; <strong>therefore</strong>, I passed.</td></tr>
+                        <tr><td class="p-4 font-bold text-indigo-700">Since</td><td class="p-4">/sɪns/</td><td class="p-4 italic">Ya que / Puesto que</td><td class="p-4"><strong>Since</strong> you are here, let's play.</td></tr>
+                        <tr><td class="p-4 font-bold text-indigo-700">Thus</td><td class="p-4">/ðʌs/</td><td class="p-4 italic">Así / Por consiguiente</td><td class="p-4">He fell, <strong>thus</strong> he is crying.</td></tr>
+                        <tr><td class="p-4 font-bold text-indigo-700">So that</td><td class="p-4">/soʊ ðæt/</td><td class="p-4 italic">Para que</td><td class="p-4">I study <strong>so that</strong> I can learn.</td></tr>
+                        <tr><td class="p-4 font-bold text-indigo-700">Unless</td><td class="p-4">/ʌnˈles/</td><td class="p-4 italic">A menos que</td><td class="p-4">I won't go <strong>unless</strong> you go.</td></tr>
+                        <tr><td class="p-4 font-bold text-indigo-700">Actually</td><td class="p-4">/ˈæk.tʃu.ə.li/</td><td class="p-4 italic">De hecho / En realidad</td><td class="p-4"><strong>Actually</strong>, I prefer the blue car.</td></tr>
+                        <tr><td class="p-4 font-bold text-indigo-700">Regarding</td><td class="p-4">/rɪˈɡɑːr.dɪŋ/</td><td class="p-4 italic">Respecto a</td><td class="p-4"><strong>Regarding</strong> the game, I am ready.</td></tr>
+                        <tr><td class="p-4 font-bold text-indigo-700">Overall</td><td class="p-4">/ˌoʊ.vərˈɔːl/</td><td class="p-4 italic">En general</td><td class="p-4"><strong>Overall</strong>, it was a good day.</td></tr>
+                        <tr><td class="p-4 font-bold text-indigo-700">Such as</td><td class="p-4">/sʌtʃ æz/</td><td class="p-4 italic">Tales como</td><td class="p-4">I like pets, <strong>such as</strong> cats and dogs.</td></tr>
+                        <tr><td class="p-4 font-bold text-indigo-700">While</td><td class="p-4">/waɪl/</td><td class="p-4 italic">Mientras que</td><td class="p-4">I like tea, <strong>while</strong> he likes juice.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-slate-500 text-sm mt-8 pb-10">
+            <p>&copy; 2024 - English Class Project</p>
+            <p>Creado con enfoque en conectores lógicos</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+```
