@@ -1,161 +1,155 @@
 
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive English Glossary</title>
+    <title>Glosarios Inglés - Ian Zaid Trujillo Miranda</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #f0f4f8;
+            font-family: 'Outfit', sans-serif;
+            background-color: #fcfcfd;
+            color: #1e293b;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .glossary-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2.5rem;
+            overflow: hidden;
         }
-        .search-input:focus {
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+        .header-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
         }
-        .word-row:hover {
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
             background-color: #f8fafc;
+            color: #64748b;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 1rem;
+            border-bottom: 2px solid #e2e8f0;
         }
-        .tab-active {
-            border-bottom: 3px solid #3b82f6;
-            color: #1e40af;
+        td {
+            padding: 1.25rem 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.95rem;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .word-cell {
+            font-weight: 700;
+            color: #1d4ed8;
+        }
+        .ipa-cell {
+            font-family: monospace;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        .translation-cell {
+            font-style: italic;
+            color: #334155;
+        }
+        .example-box {
+            background-color: #f1f5f9;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            display: inline-block;
+            color: #475569;
         }
     </style>
 </head>
-<body class="min-h-screen py-8 px-4 sm:px-6">
+<body class="py-12 px-4 md:px-8">
 
-    <div class="max-w-4xl mx-auto">
-        <!-- Header Section -->
-        <header class="text-center mb-8">
-            <div class="inline-block p-2 bg-blue-100 rounded-full mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
+    <div class="max-w-5xl mx-auto">
+        <!-- Presentación -->
+        <header class="text-center mb-12">
+            <h1 class="text-3xl md:text-5xl font-bold text-slate-900 mb-2">English Glossary Project</h1>
+            <p class="text-xl text-blue-600 font-semibold mb-6">Ian Zaid Trujillo Miranda</p>
+            <div class="flex justify-center gap-4 text-sm font-medium text-slate-500">
+                <span class="px-4 py-1 bg-slate-100 rounded-full">Unit 9 & 10</span>
+                <span class="px-4 py-1 bg-slate-100 rounded-full">English Class</span>
             </div>
-            <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight">English Vocabulary</h1>
-            <p class="mt-2 text-lg text-slate-600">Advanced Connectors & Transition Words</p>
         </header>
 
-        <!-- Search and Filter -->
-        <div class="mb-8 space-y-4">
-            <div class="relative">
-                <input type="text" id="searchInput" placeholder="Search for a word or meaning..." 
-                    class="w-full p-4 pl-12 rounded-2xl border-none glass-card shadow-sm text-slate-700 search-input transition-all outline-none">
-                <svg class="w-6 h-6 absolute left-4 top-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
+        <!-- Glosario Unidad 9 -->
+        <div class="glossary-card">
+            <div class="p-6 header-gradient text-white">
+                <h2 class="text-xl font-bold">Vocabulary Glossary: Unit 9</h2>
+                <p class="text-blue-100 text-sm">Contrast and Addition Connectors</p>
             </div>
-            
-            <div class="flex border-b border-slate-200">
-                <button onclick="switchTab('all')" id="tab-all" class="px-6 py-2 font-semibold text-slate-500 tab-active transition-all">All Words</button>
-                <button onclick="switchTab('contrast')" id="tab-contrast" class="px-6 py-2 font-semibold text-slate-500 transition-all">Contrast</button>
-                <button onclick="switchTab('cause')" id="tab-cause" class="px-6 py-2 font-semibold text-slate-500 transition-all">Cause/Effect</button>
-            </div>
-        </div>
-
-        <!-- Vocabulary Table -->
-        <div class="glass-card rounded-3xl shadow-xl overflow-hidden">
             <div class="overflow-x-auto">
-                <table class="w-full border-collapse">
+                <table>
                     <thead>
-                        <tr class="bg-slate-50 border-b border-slate-100">
-                            <th class="p-5 text-left text-xs font-bold text-slate-400 uppercase tracking-widest">Word</th>
-                            <th class="p-5 text-left text-xs font-bold text-slate-400 uppercase tracking-widest">Phonetics</th>
-                            <th class="p-5 text-left text-xs font-bold text-slate-400 uppercase tracking-widest">Spanish</th>
-                            <th class="p-5 text-left text-xs font-bold text-slate-400 uppercase tracking-widest">Example Usage</th>
+                        <tr>
+                            <th class="text-left">Word</th>
+                            <th class="text-left">Phonetics (IPA)</th>
+                            <th class="text-left">Translation</th>
+                            <th class="text-left">Example</th>
                         </tr>
                     </thead>
-                    <tbody id="vocabTable" class="divide-y divide-slate-100">
-                        <!-- Data will be populated by JS -->
+                    <tbody>
+                        <tr><td class="word-cell">Although</td><td class="ipa-cell">/ɔːlˈðoʊ/</td><td class="translation-cell">Aunque</td><td><div class="example-box"><strong>Although</strong> it is cold, I am happy.</div></td></tr>
+                        <tr><td class="word-cell">However</td><td class="ipa-cell">/haʊˈev.ər/</td><td class="translation-cell">Sin embargo</td><td><div class="example-box">I like pizza. <strong>However</strong>, I am full.</div></td></tr>
+                        <tr><td class="word-cell">Furthermore</td><td class="ipa-cell">/ˌfɜːr.ðəˈmɔːr/</td><td class="translation-cell">Además</td><td><div class="example-box">It is fast. <strong>Furthermore</strong>, it is cheap.</div></td></tr>
+                        <tr><td class="word-cell">Instead</td><td class="ipa-cell">/ɪnˈsted/</td><td class="translation-cell">En su lugar</td><td><div class="example-box">Don't run. <strong>Instead</strong>, walk slowly.</div></td></tr>
+                        <tr><td class="word-cell">Otherwise</td><td class="ipa-cell">/ˈʌð.ə.waɪz/</td><td class="translation-cell">De lo contrario</td><td><div class="example-box">Eat now; <strong>otherwise</strong>, you'll be hungry.</div></td></tr>
+                        <tr><td class="word-cell">Despite</td><td class="ipa-cell">/dɪˈspaɪt/</td><td class="translation-cell">A pesar de</td><td><div class="example-box">I ran <strong>despite</strong> the rain.</div></td></tr>
+                        <tr><td class="word-cell">Moreover</td><td class="ipa-cell">/mɔːrˈoʊ.vər/</td><td class="translation-cell">Por otra parte</td><td><div class="example-box">She is smart. <strong>Moreover</strong>, she is kind.</div></td></tr>
+                        <tr><td class="word-cell">Yet</td><td class="ipa-cell">/jet/</td><td class="translation-cell">Aun así</td><td><div class="example-box">It is small, <strong>yet</strong> very strong.</div></td></tr>
+                        <tr><td class="word-cell">Nonetheless</td><td class="ipa-cell">/ˌnʌn.ðəˈles/</td><td class="translation-cell">No obstante</td><td><div class="example-box">It was hard; <strong>nonetheless</strong>, I finished.</div></td></tr>
+                        <tr><td class="word-cell">In addition</td><td class="ipa-cell">/ɪn əˈdɪʃ.ən/</td><td class="translation-cell">Adicionalmente</td><td><div class="example-box"><strong>In addition</strong> to milk, I need bread.</div></td></tr>
                     </tbody>
                 </table>
             </div>
-            <div id="noResults" class="hidden p-12 text-center text-slate-500">
-                No words found for your search.
+        </div>
+
+        <!-- Glosario Unidad 10 -->
+        <div class="glossary-card">
+            <div class="p-6 bg-slate-800 text-white">
+                <h2 class="text-xl font-bold">Vocabulary Glossary: Unit 10</h2>
+                <p class="text-slate-400 text-sm">Cause, Effect and Precise Language</p>
+            </div>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="text-left">Word</th>
+                            <th class="text-left">Phonetics (IPA)</th>
+                            <th class="text-left">Translation</th>
+                            <th class="text-left">Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="word-cell">Therefore</td><td class="ipa-cell">/ˈðer.fɔːr/</td><td class="translation-cell">Por lo tanto</td><td><div class="example-box">I studied; <strong>therefore</strong>, I passed.</div></td></tr>
+                        <tr><td class="word-cell">Since</td><td class="ipa-cell">/sɪns/</td><td class="translation-cell">Ya que</td><td><div class="example-box"><strong>Since</strong> you are here, let's play.</div></td></tr>
+                        <tr><td class="word-cell">Thus</td><td class="ipa-cell">/ðʌs/</td><td class="translation-cell">Así</td><td><div class="example-box">He fell, <strong>thus</strong> he is crying.</div></td></tr>
+                        <tr><td class="word-cell">So that</td><td class="ipa-cell">/soʊ ðæt/</td><td class="translation-cell">Para que</td><td><div class="example-box">I study <strong>so that</strong> I can learn.</div></td></tr>
+                        <tr><td class="word-cell">Unless</td><td class="ipa-cell">/ʌnˈles/</td><td class="translation-cell">A menos que</td><td><div class="example-box">I won't go <strong>unless</strong> you go.</div></td></tr>
+                        <tr><td class="word-cell">Actually</td><td class="ipa-cell">/ˈæk.tʃu.ə.li/</td><td class="translation-cell">De hecho</td><td><div class="example-box"><strong>Actually</strong>, I prefer the blue car.</div></td></tr>
+                        <tr><td class="word-cell">Regarding</td><td class="ipa-cell">/rɪˈɡɑːr.dɪŋ/</td><td class="translation-cell">Respecto a</td><td><div class="example-box"><strong>Regarding</strong> the game, I am ready.</div></td></tr>
+                        <tr><td class="word-cell">Overall</td><td class="ipa-cell">/ˌoʊ.vərˈɔːl/</td><td class="translation-cell">En general</td><td><div class="example-box"><strong>Overall</strong>, it was a good day.</div></td></tr>
+                        <tr><td class="word-cell">Such as</td><td class="ipa-cell">/sʌtʃ æz/</td><td class="translation-cell">Tales como</td><td><div class="example-box">I like pets, <strong>such as</strong> cats and dogs.</div></td></tr>
+                        <tr><td class="word-cell">While</td><td class="ipa-cell">/waɪl/</td><td class="translation-cell">Mientras que</td><td><div class="example-box">I like tea, <strong>while</strong> he likes juice.</div></td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
-        <footer class="mt-12 text-center text-slate-400 text-sm">
-            <p>Ready for the English Project • 2024</p>
+        <footer class="text-center text-slate-400 text-sm mt-8">
+            <p>Trabajo académico presentado por Ian Zaid Trujillo Miranda</p>
         </footer>
     </div>
 
-    <script>
-        const words = [
-            { word: "Although", ipa: "/ɔːlˈðoʊ/", spanish: "Aunque", example: "Although it is cold, I am happy.", category: "contrast" },
-            { word: "However", ipa: "/haʊˈev.ər/", spanish: "Sin embargo", example: "I like pizza. However, I am full.", category: "contrast" },
-            { word: "Furthermore", ipa: "/fɜːr.ðəˈmɔːr/", spanish: "Además", example: "It is fast. Furthermore, it is cheap.", category: "addition" },
-            { word: "Instead", ipa: "/ɪnˈsted/", spanish: "En su lugar", example: "Don't run. Instead, walk slowly.", category: "contrast" },
-            { word: "Otherwise", ipa: "/ˈʌð.ə.waɪz/", spanish: "De lo contrario", example: "Eat now; otherwise, you'll be hungry.", category: "cause" },
-            { word: "Despite", ipa: "/dɪˈspaɪt/", spanish: "A pesar de", example: "I ran despite the rain.", category: "contrast" },
-            { word: "Moreover", ipa: "/mɔːrˈoʊ.vər/", spanish: "Por otra parte", example: "She is smart. Moreover, she is kind.", category: "addition" },
-            { word: "Yet", ipa: "/jet/", spanish: "Aun así", example: "It is small, yet very strong.", category: "contrast" },
-            { word: "Nonetheless", ipa: "/ˌnʌn.ðəˈles/", spanish: "No obstante", example: "It was hard; nonetheless, I finished.", category: "contrast" },
-            { word: "In addition", ipa: "/ɪn əˈdɪʃ.ən/", spanish: "Adicionalmente", example: "In addition to milk, I need bread.", category: "addition" },
-            { word: "Therefore", ipa: "/ˈðer.fɔːr/", spanish: "Por lo tanto", example: "I studied; therefore, I passed.", category: "cause" },
-            { word: "Since", ipa: "/sɪns/", spanish: "Ya que", example: "Since you are here, let's play.", category: "cause" },
-            { word: "Thus", ipa: "/ðʌs/", spanish: "Así / Por consiguiente", example: "He fell, thus he is crying.", category: "cause" },
-            { word: "So that", ipa: "/soʊ ðæt/", spanish: "Para que", example: "I study so that I can learn.", category: "cause" },
-            { word: "Unless", ipa: "/ʌnˈles/", spanish: "A menos que", example: "I won't go unless you go.", category: "cause" },
-            { word: "Actually", ipa: "/ˈæk.tʃu.ə.li/", spanish: "De hecho", example: "Actually, I prefer the blue car.", category: "detail" },
-            { word: "Regarding", ipa: "/rɪˈɡɑːr.dɪŋ/", spanish: "Respecto a", example: "Regarding the game, I am ready.", category: "detail" },
-            { word: "Overall", ipa: "/ˌoʊ.vərˈɔːl/", spanish: "En general", example: "Overall, it was a good day.", category: "detail" },
-            { word: "Such as", ipa: "/sʌtʃ æz/", spanish: "Tales como", example: "I like pets, such as cats and dogs.", category: "detail" },
-            { word: "While", ipa: "/waɪl/", spanish: "Mientras que", example: "I like tea, while he likes juice.", category: "contrast" }
-        ];
-
-        let currentFilter = 'all';
-        const searchInput = document.getElementById('searchInput');
-        const vocabTable = document.getElementById('vocabTable');
-        const noResults = document.getElementById('noResults');
-
-        function renderTable() {
-            const query = searchInput.value.toLowerCase();
-            const filtered = words.filter(item => {
-                const matchesSearch = item.word.toLowerCase().includes(query) || 
-                                    item.spanish.toLowerCase().includes(query);
-                const matchesTab = currentFilter === 'all' || 
-                                  (currentFilter === 'contrast' && item.category === 'contrast') ||
-                                  (currentFilter === 'cause' && item.category === 'cause');
-                return matchesSearch && matchesTab;
-            });
-
-            if (filtered.length === 0) {
-                vocabTable.innerHTML = '';
-                noResults.classList.remove('hidden');
-            } else {
-                noResults.classList.add('hidden');
-                vocabTable.innerHTML = filtered.map(item => `
-                    <tr class="word-row transition-colors">
-                        <td class="p-5 font-bold text-blue-600">${item.word}</td>
-                        <td class="p-5 text-slate-400 font-mono text-sm">${item.ipa}</td>
-                        <td class="p-5 text-slate-700 italic">${item.spanish}</td>
-                        <td class="p-5 text-slate-600">
-                            <span class="text-xs bg-slate-100 px-2 py-1 rounded-md block sm:inline-block mt-1 sm:mt-0">${item.example}</span>
-                        </td>
-                    </tr>
-                `).join('');
-            }
-        }
-
-        function switchTab(tab) {
-            currentFilter = tab;
-            document.querySelectorAll('button').forEach(btn => btn.classList.remove('tab-active'));
-            document.getElementById(`tab-${tab}`).classList.add('tab-active');
-            renderTable();
-        }
-
-        searchInput.addEventListener('input', renderTable);
-        window.onload = renderTable;
-    </script>
 </body>
 </html>
 
